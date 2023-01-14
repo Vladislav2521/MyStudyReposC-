@@ -1,0 +1,52 @@
+// Logical "&"
+int a = 3; //00011
+int b = 4; //00100
+int c = 7; //00111
+
+Console.WriteLine(a & b); //00000 == 0
+Console.WriteLine(a & c); //00011 == 3
+
+// Logical "|"
+int a = 3; //00011
+int b = 4; //00100
+int c = 7; //00111
+
+Console.WriteLine(a | b); //00111 == 7
+Console.WriteLine(a | c); //00111 == 7
+
+// Logical "^"
+int a = 3; //00011
+int b = 4; //00100
+int c = 7; //00111
+
+Console.WriteLine(a ^ b); // 00111 == 7
+Console.WriteLine(a ^ c); // 00100 == 4
+
+// Logical "~"
+int a = 3; //00011
+int b = 4; //00100
+int c = 7; //00111
+
+Console.WriteLine(~a); // -4
+Console.WriteLine(~b); // -5
+Console.WriteLine(~c); // -8
+
+// Shift operations
+int x = 4;
+int y = 1;
+
+Console.WriteLine(x << y); // 00100 (01000 after shift)
+Console.WriteLine(x >> y); // 00100 (00010 after shift)
+
+// Converting a positive number into a negative one
+int x = 15; // 110001 110101
+int y = ~x;
+y += 1;
+Console.WriteLine(y); // 101101 110001 110101
+
+
+
+
+
+
+

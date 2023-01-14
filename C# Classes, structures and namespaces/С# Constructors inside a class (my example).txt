@@ -1,0 +1,37 @@
+// 3 экземпляра одного и того же класса
+// 
+Person yarik = new Person(); // вызов 1го конструктора без параметров
+Person mahmud = new Person("Mahmud"); // вызов 2го конструктора с одним параметром
+Person vlad = new Person("Vlad", 28); // вызов 3го конструктора с двумя параметрами
+
+yarik.Print(); // Имя: Неизвестно Возраст: 18
+mahmud.Print(); // Имя: Mahmud Возраст: 20
+vlad.Print(); // Имя: Vlad Возраст: 28
+
+class Person // Модификатор public тут нужен для того чтобы конструктор был доступен вне класса Person
+{
+    public string name; // Указал какие могут быть поля, они же свойства
+    public int age;
+    public Person() // 1й конструктор
+    {
+        name = "Неизвестно";
+        age = 16;
+    }
+    public Person(string n) // 2й конструктор
+        // В переменной "n" спрятан Mahmud
+    {
+        name = n;
+        age = 20; // Хотя мы и не указали возраст во 2 строке в скобках, он всё равно будет выведен на 
+                  // консоль
+    }
+    public Person(string n, int a) // 3й конструктор
+        // В переменной "n" спрятан Vlad, в переменной "a" спрятан возраст 28 лет
+    {
+        name = n;
+        age = a;
+    }
+    public void Print()
+    {
+        Console.WriteLine($"Имя: {name} Возраст: {age}");
+    }
+}

@@ -1,0 +1,74 @@
+int num1 = 8;
+int num2 = 6;
+if (num1 > num2)
+{
+    Console.WriteLine($"Number {num1} is bigger than {num2}");
+}
+// Также мы можем соединить сразу несколько условий, используя логические операторы:
+int num3 = 5;
+int num4 = 9;
+if (num3 < num4 && num1 == 8)
+{
+    Console.WriteLine("The condition is being executed");
+}
+// В данном случае блок if будет выполняться, если num1 > num2 равно true и num1==8 равно true.
+int num5 = 70;
+int num6 = 67;
+if (num5 < num6)
+{
+    Console.WriteLine($"Number {num5} is smaller than {num6}");
+    
+}
+else
+{
+    Console.WriteLine($"Number {num5} is bigger than {num6}");
+}
+// Блок else выполняется, если условие после if ложно, то есть равно false.
+
+int num7 = 34;
+int num8 = 34;
+if (num7 > num8)
+{
+    Console.WriteLine($"Number {num7} is bigger than {num8}");
+}
+else if (num7 < num8)
+{
+    Console.WriteLine($"Number {num7} is smaller than {num8}");
+}
+else
+{
+    Console.WriteLine($"Number {num7} is equal to {num8}");
+}
+// Но в примере выше при сравнении чисел мы можем насчитать три состояния: первое число больше второго,
+// первое число меньше второго и числа равны.
+// Используя конструкцию else if, мы можем обрабатывать дополнительные условия.
+
+string name = "Pedros";
+
+if (name == "Vasyok")
+{
+    Console.WriteLine("Your name is Vasiliy");
+}
+else if (name == "Gosha")
+{
+    Console.WriteLine("Your name is Georgiy");
+}
+else if (name == "Shurik")
+{
+    Console.WriteLine("Your name is Alexandr");
+}
+else
+{
+    Console.WriteLine("Name is not found");
+}
+// При необходимости можно добавить несколько выражений else if.
+
+// Пример тернарной операции:
+int x = 5;
+int y = 2;
+
+int z = x < y ? (x + y) : (x - y);
+Console.WriteLine(z);
+// Здесь первый операнд (то есть условие) представляет выражение x < y.
+// Если оно равно true, то возвращается второй операнд - (x+y), то есть результат операции сложения.
+// Если условие равно false, то возвращается третий операнд - (x-y).

@@ -1,0 +1,40 @@
+Person tom = new Person { name = "Tom", age = 31 };
+tom.Print();
+
+class Person
+{
+    public string name;
+    public int age;
+
+    public void Print() => Console.WriteLine($"Имя: {name} Возраст: {age}");
+
+}
+// Инициализатор выполняется после конструктора, поэтому если и в конструкторе,
+// и в инициализаторе устанавливаются значения одних и тех же полей и свойств,
+// то значения, устанавливаемые в конструкторе, заменяются значениями из инициализатора.
+-----------------------------------------------------------------------------------------
+
+Person vlad = new Person { name = "Vlad", company = { title = "AI Cybernetics inc." } };
+vlad.Print();
+
+class Person
+{
+    public string name;
+    public Company company;
+    public Person()
+    {
+        name = "Undefined";
+        company = new Company();
+    }
+    public void Print() => Console.WriteLine($"Имя: {name} Компания: {company.title}");
+}
+class Company
+{
+    public string title = "Unknown";
+}
+// 1. Мы заходим в конструктор public Person(); присваиваем полю "name" (22 строка) значение "Undefined"
+// 2. Мы присваиваем полю "company" (23 строка) title "Unknown"
+// 3. Возвращаемся в 17 строку, берём из инициализатора объектра наши значения для наших полей в 22 и 23 строках.
+// Для поля "name" это "Vlad", для поля "company" это "title", а в нём 
+// значение "AI Cybernetics inc.".
+// 4. Через метод Print(); выводим на консоль значения наших полей.

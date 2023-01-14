@@ -1,0 +1,37 @@
+int Sum(int[] numbers)
+{
+    int limit = 0;
+    int result = 0;
+    foreach (int number in numbers)
+    {
+        if (IsPassed(number)) result += number;
+    }
+    return result;
+    
+    static bool IsPassed(int number)
+    {
+        return number > limit;
+    }
+}
+int[] numbers1 = { -3, -2, -1, 0, 1, 2, 3 };
+int[] numbers2 = { -3, -4, 5, -6, 7 };
+
+int Sum(int[] numbers)
+{
+    int limit = 0;
+    int result = 0;
+    foreach (int number in numbers)
+    {
+        if (IsPassed(number)) result += number;
+    }
+    return result;
+
+    static bool IsPassed(int number, int lim)
+    {
+        return number > lim;
+    }
+} // Тут функция IsPassed не может обращаться к переменной limit.
+  // В этом случае нам надо либо передать значение в виде параметра, либо определить переменную limit (lim) в
+  // локальной функции.
+int[] numbers3 = { -3, -2, -1, 0, 1, 2, 3 };
+int[] numbers4 = { -3, -4, 5, -6, 7 };

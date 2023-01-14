@@ -1,0 +1,35 @@
+bool Condition1()
+{
+    Console.WriteLine("Condition1 is evaluated");
+    return false;
+}
+bool Condition2()
+{
+    Console.WriteLine("Condition2 is evaluated");
+    return true;
+}
+
+
+if (Condition1() & Condition2())
+{
+    Console.WriteLine("This will not print out");
+}
+// Если один из операндов false, то всё выражение false, ОБА операнда проверяются.
+
+if (Condition1() | Condition2())
+{
+    Console.WriteLine("This will print out");
+}
+// Если один из операндов true, то всё выражение true, ОБА операнда проверяются.
+
+if (Condition1() && Condition2())
+{
+    Console.WriteLine("This will not print out");
+}
+// Если один из операндов false, то всё выражение false, ВТОРОЙ операнд НЕ ПРОВЕРЯЕТСЯ, потому что первый операнд false.
+
+if (Condition2() || Condition1())
+{
+    Console.WriteLine("This will print out");
+}
+// Если один из операндов true, то всё выражение true, ВТОРОЙ операнд НЕ ПРОВЕРЯЕТСЯ, потому что первый операнд true.

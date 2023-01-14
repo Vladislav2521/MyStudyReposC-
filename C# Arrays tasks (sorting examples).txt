@@ -1,0 +1,107 @@
+int[] numbers = { -3, -15, -25, -14, 4, 0, 3, 6, 15, 28, 4, 5 };
+int resultPositive = 0;
+foreach (int numberPos in numbers)
+{
+    if (numberPos > 0)
+    {
+        resultPositive++;
+    }
+}
+Console.WriteLine($"Число элементов больше нуля: {resultPositive}");
+
+int resultNegative = 0;
+foreach (int numberNeg in numbers)
+{
+    if(numberNeg < 0)
+    {
+        resultNegative++;
+    }
+}
+Console.WriteLine($"Число элементов меньше нуля: {resultNegative}");
+// Нахождение положительных и отрицательных элементов в массиве
+
+
+int[] numbers = {- 4, -5, -3, -2, -1, 0, 1, 2, 3, 4};
+
+int numLength = numbers.Length; // длина нашего массива
+int numMid = numLength / 2; // середина нашего массива (при делении всех элементов массива на 2 мы получаем средний элемент)
+int exchange; // вспомогательный элемент для обмена значениями
+
+for (int i = 0; i < numMid; i++) // В первой итерации i = 0;
+{
+    exchange = numbers[i]; // В первой итерации я exchange присваиваю значение "-4", потому что i = 0
+    numbers[i] = numbers[numLength - i - 1]; //В первой итерации Количество элементов массива 10 минус 0 минус 1 равно 9 (9 это последний индекс массива равен значению 4)
+    numbers[numLength - i - 1] = exchange; 
+} // Внутри цикла for я переставляю элементы массива местами
+foreach (int i in numbers)
+{
+    Console.Write($"{i} \t");
+}
+// Алгоритм решения задачи подразумевает перебор элементов до середины массива,
+// которая в программе представлена переменной k, и обмен значений элемента, который имеет индекс i,
+// и элемента с индексом n-i-1.
+
+// Программа сортировки массива (простыми обменами "пузырьком")
+int[] nums = {54, 7, -41, 2, 4, 2, 89, 33, -5, 12};
+// сортировка
+int exchange;
+for (int i = 0; i < nums.Length - 1; i++)
+{
+    for (int j = i + 1; j < nums.Length; j++)
+    {
+        if (nums[i] > nums[j]) // сюда прокидывается i из внешнего цикла for
+        {
+            exchange = nums[i];
+            nums[i] = nums[j];
+            nums[j] = exchange;
+        }
+    }
+}
+Console.WriteLine("Вывод отсортированного массива");
+for (int i = 0; i < nums.Length; i++)
+{
+    Console.WriteLine(nums[i]);
+}
+
+// Более детальный пример сортировки массива
+
+// ввод чисел
+int[] array = {5, 6, 3, 7, 1};
+
+// сортировка
+int temporary;
+for (int i = 0; i < array.Length - 1; i++) // в данном примере нету смысла в этой -1,
+// если только пропустить последний заход (индексов 4, а элементов в массиве 5)
+// последний элемент массива не с чем сравнивать
+{
+    for (int j = i + 1; j < array.Length; j++)
+    {
+        Console.WriteLine($"i = {i} и j = {j}");
+        Console.WriteLine("Текущее состояние массива: " + String.Join(",", array));
+        Console.WriteLine($"Сравниваем array[i] = {array[i]} и array[j] = {array[j]}");
+        if (array[i] > array[j])
+        {
+            Console.WriteLine("array[i] больше array[j]");
+            Console.WriteLine($"Работаем с : array[i] = {array[i]} и array[j] = {array[j]}");
+            temporary = array[i];
+            array[i] = array[j];
+            array[j] = temporary;
+            Console.WriteLine($"Поменяли местами, теперь : array[i] = {array[i]} и array[j] = {array[j]} ");
+        }
+        else
+        {
+            Console.WriteLine("array[i] меньше array[j], продолжаем итерации");
+        }
+    }
+}
+
+// вывод
+Console.WriteLine("Вывод отсортированного массива");
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine(array[i]);
+}
+Console.ReadLine();
+
+
+

@@ -1,0 +1,18 @@
+string name = "Vladislav";
+int age = 28;
+double height = 1.9;
+
+string name2 = "Vasyok";
+int age2 = 18;
+double height2 = 1.6;
+Console.Write("Введите имя: ");
+string? name3 = Console.ReadLine();
+Console.WriteLine($"{name3}");
+if (name3 == "Vladislav")
+{
+    Console.WriteLine("Имя: {0} Возраст: {2} Рост: {1}", name, height, age);
+}
+else
+{
+    Console.WriteLine("Имя: {0} Возраст: {2} Рост: {1}", name2, height2, age2);
+}

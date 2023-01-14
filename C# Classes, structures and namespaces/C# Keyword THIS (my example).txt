@@ -1,0 +1,21 @@
+Person aaron = new ("Aaron", 22);
+aaron.Print();
+
+class Person
+{
+    public string name;
+    public int age;
+    public Person () { name = "Неизвестно"; age = 19; }
+    public Person (string name) { this.name = name; age = 18; }
+    public Person (string name, int age)
+    {
+        this.name = name; // В this.name означает, что 'name' это поле текущего класса, а не название
+        // параметра "name".
+        this.age = age;
+    }
+    public void Print() => Console.WriteLine($"Имя: {name} Возраст: {age}");
+    // Важно отметить что консольложим мы именно поля класса 'name' и 'age' с прокинутыми в них параметрами
+    // в конструкторе.
+}
+// Если бы у нас параметры и поля назывались по-разному, то использовать слово this было бы необязательно.
+// Также через ключевое слово this можно обращаться к любому полю или методу.

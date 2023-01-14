@@ -1,0 +1,27 @@
+namespace PreviousVersionOfCode
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+            foreach (var item in args)
+            {
+                Console.WriteLine(item);
+                
+            }
+            Console.Read();
+            //Console.WriteLine(Sum(8, 6));
+            //var num1 = "Hey";
+            //Program obj = new Program();
+            string str = Console.ReadLine();
+            Console.WriteLine(str);
+            //Program.Sum()
+        }
+         static int Sum(int arg1, int arg2)
+        {
+           return arg1 + arg2;
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+void Compare(int[] numbers1, int[]numbers2) // Тут метод "Compare" принимает два массива и последовательно вычисляет сумму их элементов,
+    // чтобы узнать в каком массиве чисел больше. Код работает, но есть недостаток (тут повторяются действия, которые которые вычисляют сумму массива).
+{
+    int numbers1Sum = 0; // В переменных ставим значения по умолчанию (счётчики количества элементов в массиве)
+    int numbers2Sum = 0;
+
+    foreach (int number in numbers1) // Каждый "foreach" обходит элемент каждого массива (numbers1, numbers2).
+        numbers1Sum += number;
+
+    foreach (int number in numbers2)
+        numbers2Sum += number;
+
+    if (numbers1Sum > numbers2Sum)
+        Console.WriteLine("сумма чисел из массива numbers1 больше");
+    else if (numbers1Sum < numbers2Sum)
+        Console.WriteLine("сумма чисел из массива numbers2 больше");
+    else
+        Console.WriteLine("суммы чисел обоих массивов равны");
+}
+int[] numbers1 = { 1, 2, 3 };
+int[] numbers2 = { 3, 4, 5, 6, 7 };
+Compare(numbers1, numbers2);
+// К тому а что, если мы захотим сравнивать сумму только положительных или четных чисел или как-то иначе изменить логику сравнения? 
+// В этом лучше вынести повторяющиеся действия в отдельный метод. 
+// Однако если эти действия нигде больше в программе не будут вызываться и будут использоваться только в одном методе,
+// то целесообразно определить эти действия в виде локальной функции. Для этого изменим метод Compare следующим образом:
+
+void Compare(int[] numbers1, int[] numbers2)
+{
+    int numbers1Sum = Sum(numbers1); 
+    int numbers2Sum = Sum(numbers2);
+    // Создаем 2 переменных параметры Sum прокидываем данные наших массивов.
+
+    if (numbers1Sum > numbers2Sum)
+        Console.WriteLine("сумма чисел из массива numbers1 больше");
+    else if (numbers1Sum < numbers2Sum)
+        Console.WriteLine("cумма чисел из массива numbers2 больше");
+    else
+        Console.WriteLine("суммы чисел обоих массивов равны");
+
+    int Sum(int[] numbers) // Локальная функция вычисляет количество элементов в массиве.
+    {
+        int result = 0;
+        foreach (int number in numbers) // Считаем элементы при помочи форыча:D
+            result += number;
+        return result;
+    }
+}
+int[] numbers1 = { 1, 2, 3, 9, 3, 5, 3 };
+int[] numbers2 = { 3, 4, 5, 6, 7 };
+
+Compare(numbers1, numbers2);

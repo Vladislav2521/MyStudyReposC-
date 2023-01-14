@@ -1,0 +1,11 @@
+int x = 15; // 0000000000001111
+int y = ~x;
+y += 1;
+Console.WriteLine(y); // 1111111111110001
+
+int x = 15; // 0000000000001111
+int y = ~x;
+y += 1;
+Console.WriteLine(y); // 1111111111110001
+var str = Convert.ToString(y, 2).PadLeft(16, '0');
+Console.WriteLine(str);

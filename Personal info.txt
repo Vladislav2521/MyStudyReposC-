@@ -1,0 +1,11 @@
+using System;
+
+string name = "Vlad";
+int age = 28;
+bool isEmployed = true;
+double weight = 118.5;
+
+Console.WriteLine($"Имя: {name}");
+Console.WriteLine($"Возраст: {age}");
+Console.WriteLine($"Вес: {weight}");
+Console.WriteLine($"Работает: {isEmployed}");

@@ -1,0 +1,31 @@
+int DoOperation(int op, int a, int b)
+{
+    switch (op)
+    {
+        case 1: return a + b;
+        case 2: return a - b;
+        case 3: return a * b;
+        default: return 0;
+    }
+}
+int result1 = DoOperation(1, 10, 19);
+Console.WriteLine(result1);
+
+int result2 = DoOperation(3, 10, 5);
+Console.WriteLine(result2);
+// В зависимости от того, какую операцию нам нужно выполнить,
+// прописываем первый параметр в DoOperation соответствующий
+// желаемому case.
+
+int DoOperation(int op, int a, int b)
+{
+    return op switch
+    {
+        1 => a + b,
+        2 => a - b,
+        3 => a * b,
+        _ => 0
+    };
+}
+// Тут можно сразу возвратить из метода результат без
+// присвоения переменной результата конструкции switch.

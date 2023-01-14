@@ -1,0 +1,149 @@
+// here is an example of "for" loop:
+    for (int i = 1; i < 4; i++)
+    {
+        Console.WriteLine(i);
+    }
+
+// It is not necessary to define a variable in the first part of the loop, and change its value
+// in the third part:
+var i = 1;
+for (Console.WriteLine("The beginning of loop iteration"); i < 4; Console.WriteLine($"i = {i}"))
+{
+    i++;
+}
+// Here again, the loop is executed as long as the variable "i" is less than 4,
+// but the increment of the variable "i" occurs in the loop block.
+
+// We don't have to specify all the conditions when declaring a loop. For example, we can write like this:
+int i = 1;
+for (; ;)
+{
+    Console.WriteLine(i);
+    i++;
+}
+// Formally, the definition of the cycle remains the same, only now the blocks in the definition are empty: for (; ;).
+// We have no initialized variable, no condition, so the loop will run forever - an INFINITE loop.
+
+// We can also skip a number of blocks:
+int i = 1;
+for (; i < 4;)
+{
+    Console.WriteLine($"i = {i}");
+    i++;
+}
+// This example is essentially equivalent to the first example:
+// we also have a counter-variable, but it is defined outside the loop.
+// We have a loop execution condition and there is an increment of the variable already in the for block itself.
+
+// It 's also worth noting that you can define several variables in a loop declaration:
+for (int i = 1, j = 1; i < 10; i++, j++)
+{
+    Console.WriteLine($"{i * j}");
+}
+// Here, in the first part of the loop declaration, two variables are defined: "i" and "j".
+// The loop is executed until "i" is equal to 10.
+// After each iteration, the variables "i" and "j" are incremented by one.
+
+// DO...WHILE 
+// In the "do" loop, the loop code is executed first, and then the condition is checked in the "while" statement.
+// And as long as this condition is true, the cycle repeats.
+int i = 6;
+do
+{
+    Console.WriteLine(i);
+    i--;
+}
+//while (i > 0);
+// Here the loop code will execute 6 times until "i" becomes zero.
+
+// But it is important to note that the "do" loop guarantees at least one execution of actions,
+// even if the condition in the while statement is not true.
+// That is, how we can write it:
+int i = -1;
+do
+{
+    Console.WriteLine(i);
+    i--;
+}
+while (i > 0);
+// Although we have a variable "i" less than 0, the loop will execute only one time.
+
+//WHILE
+// Unlike the "do" loop, the "while" loop immediately checks the truth of some condition,
+// and if the condition is true, then the loop code is executed:
+int i = 6;
+while (i > 0)
+{
+    Console.WriteLine(i);
+    i--;
+}
+
+//FOREACH
+// The foreach loop is designed to iterate through a set or collection of elements.
+foreach(char c in "Vlad")
+{
+    Console.WriteLine(c);
+}
+
+// After the "foreach" operator in parentheses, the variable definition comes first.
+// Then the keyword "in" and then the collection, the elements that need to be sorted.
+
+// While executing, the loop sequentially iterates through the elements of the collection and puts them in a variable,
+// and thus we can perform some actions with them in the loop block.
+// For example, let's take a string. A string is essentially a collection of characters.
+// And .NET allows you to iterate through all the elements of a string - its characters using a foreach loop.
+//
+// Here the foreach loop runs through all the characters of the string "Vlad"
+// and puts each character in the character variable "c".
+// In the loop block, the value of the variable "c" is outputted to the console.
+// Since there are four characters in the string "Vlad", the loop will be executed four times.
+
+// It is worth noting, that type of data of the variable in the declaration must correspond by type to the type
+// of elements of the collection being iterated over.
+// So, the elements of the string are values of the "char" type - characters.
+// Therefore, the variable "c" has the type char.
+// However, in reality it is not always obvious what type of data the elements of the collection represent.
+// In this case, we can define the variable using the "var" operator:
+
+foreach(var c in "Vlad")
+{
+    Console.WriteLine(c);
+}
+
+// CONTINUE and BREAK operators
+// Sometimes we have a situation when you need to exit the loop without waiting for its completion.
+// In this case, we can use the "break" operator.
+for (int i = 0; i < 9; i++)
+{
+    if (i == 5)
+        break;
+    Console.WriteLine(i);
+}
+// Although the loop condition says that the loop will run until the counter "i" reaches the value 9,
+// in reality the loop will run 5 times. Since when the counter "i" reaches the value 5,
+// the break statement will be triggered, and the cycle will end.
+
+// Now let's do another task. What if we want the loop not to end when checking,
+// but just skip the current iteration. To do this, we can use the "continue" operator:
+for (int i = 0; i < 9; i++)
+{
+    if (i == 5)
+        continue;
+    Console.WriteLine(i);
+}
+// In this case, the loop, when it reaches the number 5, which does not satisfy the verification condition,
+// will simply skip this number and move on to the next iteration.
+
+// NESTED LOOP
+
+for (int i = 1; i < 10; i++)
+{
+    for (int j = 1; j < 10; j++)
+    {
+        Console.Write($"{i * j} \t");
+    }
+    Console.WriteLine();
+}
+// In this case, the for loop (int i = 1; i < 10; i++) is executed 9 times,
+// that is, it has 9 iterations. But within each iteration,
+// the nested for loop is executed nine times (int j = 1; j < 10; j++). As a result, this program will output a multiplication table.

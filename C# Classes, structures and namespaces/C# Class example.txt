@@ -1,0 +1,24 @@
+class Person
+{
+    public string name = "Undefined"; // имя
+    public int age; // возраст
+
+    public void Print()
+    {
+        Console.WriteLine($"Имя: {name} Возраст: {age}");
+    }
+}
+-------------------------
+Person tom = new Person(); // создание объекта класса Person
+
+// опеределение класса Person
+class Person
+{
+    public string name = "Undefined";
+    public int age;
+
+    public void Print()
+    {
+        Console.WriteLine($"Имя: {name} Возраст: {age}");
+    }
+}
